@@ -1,0 +1,16 @@
+<div class="product-form">
+    <h2>Update Product</h2>
+    <form (ngSubmit)="updateProduct()">
+      <label>Name: <input [(ngModel)]="product.name" name="name"></label>
+      <label>Description: <input [(ngModel)]="product.description" name="description"></label>
+      <label>Price: <input [(ngModel)]="product.price" name="price" type="number"></label>
+      <label>SKU: <input [(ngModel)]="product.sku" name="sku"></label>
+      <label>Stock Quantity: <input [(ngModel)]="product.stockQuantity" name="stockQuantity" type="number"></label>
+      <label>Size: <input [(ngModel)]="product.size" name="size"></label>
+      <label>Color: <input [(ngModel)]="product.color" name="color"></label>
+      <label>Weight: <input [(ngModel)]="product.weight" name="weight" type="number"></label>
+      <label>Dimensions: <input [(ngModel)]="product.dimensions" name="dimensions"></label>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

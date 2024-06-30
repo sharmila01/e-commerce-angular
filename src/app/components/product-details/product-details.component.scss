@@ -1,0 +1,24 @@
+/* src/app/product-details/product-details.component.scss */
+.product-details {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #333;
+    }
+  
+    p {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #555;
+  
+      strong {
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  }
+  
