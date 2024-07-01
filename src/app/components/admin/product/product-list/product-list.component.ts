@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProductService } from '../../../../services/admin-services/product.service';
+import { Product } from '../../../../models/admin-models/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,8 @@ import { ProductService } from '../../../../services/admin-services/product.serv
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
-  products: any;
+  products: Product[] = [];
+
 
   constructor(private productService: ProductService) { }
 

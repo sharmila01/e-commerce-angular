@@ -1,42 +1,58 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Product } from '../../models/admin-models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://your-api-url/products';
+  private apiUrl = 'http://example.com/api/products'; // Replace with your actual API endpoint
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
   }
 
-  getProduct(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getProduct(productId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}/${productId}`);
   }
 
-  createProduct(product: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, product);
+  
+  searchProducts(query: string, category?: string, priceRange?: [number, number], brand?: string): Observable<Product[]> {
+    let params: any = { query };
+    if (category) params.category = category;
+    if (priceRange) {
+      params.minPrice = priceRange[0];
+      params.maxPrice = priceRange[1];
+    }
+    if (brand) params.brand = brand;
+
+    return this.http.get<Product[]>(this.apiUrl, { params });
   }
 
-  updateProduct(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  createProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product);
   }
 
-  deleteProduct(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrl}/${product.id}`, product);
+  }
+
+  deleteProduct(productId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${productId}`);
   }
 
   bulkImport(file: File): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file);
-    return this.http.post(`${this.baseUrl}/import`, formData);
+    return this.http.post(`${this.apiUrl}/import`, formData);
   }
 
   bulkExport(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/export`, { responseType: 'blob' });
+    return this.http.get(`${this.apiUrl}/export`, { responseType: 'blob' });
   }
+
+ 
 }

@@ -1,0 +1,13 @@
+<div class="product-form">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <input formControlName="name" placeholder="Product Name">
+      <input formControlName="description" placeholder="Description">
+      <input formControlName="price" type="number" placeholder="Price">
+      <input formControlName="category" placeholder="Category">
+      <input formControlName="brand" placeholder="Brand">
+      <input formControlName="imageUrl" placeholder="Image URL">
+      <input formControlName="stockQuantity" type="number" placeholder="Stock Quantity">
+      <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Product</button>
+    </form>
+  </div>
+  

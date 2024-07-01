@@ -10,6 +10,8 @@
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Category</th>
+          <th>Brand</th>
           <th>SKU</th>
           <th>Actions</th>
         </tr>
@@ -18,7 +20,9 @@
         <tr *ngFor="let product of products">
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
-          <td>{{ product.sku }}</td>
+          <td>{{ product.category  }}</td>
+          <td>{{ product.brand}}</td>
+          <td>{{ product.stockQuantity   }}</td>
           <td>
             <button routerLink="/products/details/{{ product.id }}">Details</button>
             <button routerLink="/products/update/{{ product.id }}">Edit</button>

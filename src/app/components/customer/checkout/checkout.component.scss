@@ -1,0 +1,47 @@
+.checkout {
+    max-width: 600px;
+    margin: auto;
+  
+    h2, h3 {
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      input {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #218838;
+      }
+    }
+  
+    .cart-summary {
+      margin-top: 20px;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+  
+      p {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+    }
+  }
+  
