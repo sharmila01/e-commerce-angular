@@ -1,0 +1,67 @@
+<div *ngIf="order" class="order-details">
+    <h2>Order Details</h2>
+    <p><strong>Customer:</strong> {{ order.customer }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Date:</strong> {{ order.date | date }}</p>
+    <p><strong>Total:</strong> {{ order.total | currency }}</p>
+    <h3>Items</h3>
+    <ul>
+      <li *ngFor="let item of order.items">
+        {{ item.name }} - {{ item.quantity }} x {{ item.price | currency }}
+      </li>
+    </ul>
+    <h3>Customer Info</h3>
+    <p><strong>Name:</strong> {{ order.customerInfo.name }}</p>
+    <p><strong>Email:</strong> {{ order.customerInfo.email }}</p>
+    <h3>Shipping Address</h3>
+    <p>{{ order.shippingAddress }}</p>
+    <h3>Payment Status</h3>
+    <p>{{ order.paymentStatus }}</p>
+    <button (click)="updateOrderStatus('processing')">Set to Processing</button>
+    <button (click)="updateOrderStatus('shipped')">Set to Shipped</button>
+    <button (click)="updateOrderStatus('delivered')">Set to Delivered</button>
+    <button (click)="updateOrderStatus('cancelled')">Set to Cancelled</button>
+    <button (click)="issueRefund()">Issue Refund</button>
+    <button (click)="generateInvoice()">Generate Invoice</button>
+  
+    <!-- Invoice Template -->
+    <div id="invoice" style="display:none;">
+      <h1>E-commerce Invoice</h1>
+      <div>
+        <h3>From:</h3>
+        <p>Studio Apps</p>
+        <p>example&#64;mail.com</p>
+        <p>123 Street, City, State, Country</p>
+      </div>
+      <div>
+        <h3>Bill to:</h3>
+        <p>{{ order.customer }}</p>
+        <p>{{ order.customerInfo.email }}</p>
+        <p>{{ order.shippingAddress }}</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of order.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price | currency }}</td>
+            <td>{{ item.quantity * item.price | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p><strong>Subtotal:</strong> {{ order.total | currency }}</p>
+        <p><strong>Tax:</strong> {{ (order.total * 0.1) | currency }}</p>
+        <p><strong>Total Due:</strong> {{ (order.total * 1.1) | currency }}</p>
+      </div>
+    </div>
+  </div>
+  

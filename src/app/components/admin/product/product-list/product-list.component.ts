@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ProductService } from '../../../../services/admin-services/product.service';
 
 @Component({
   selector: 'app-product-list',

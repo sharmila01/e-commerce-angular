@@ -1,0 +1,8 @@
+<div class="discount-details" *ngIf="discount">
+    <h2>{{ discount.code }}</h2>
+    <p>Amount: {{ discount.amount }}</p>
+    <p>Usage Limit: {{ discount.usageLimit }}</p>
+    <p>Expiration Date: {{ discount.expirationDate }}</p>
+    <button (click)="updateDiscount()">Update</button>
+  </div>
+  

@@ -1,0 +1,28 @@
+<div class="order-list">
+    <h2>Order List</h2>
+    <input [(ngModel)]="searchTerm" placeholder="Search Orders">
+    <button (click)="searchOrders()">Search</button>
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortOrders('customer')">Customer</th>
+          <th (click)="sortOrders('status')">Status</th>
+          <th (click)="sortOrders('date')">Date</th>
+          <th (click)="sortOrders('total')">Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.customer }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.date | date }}</td>
+          <td>{{ order.total | currency }}</td>
+          <td>
+            <button routerLink="/orders/details/{{ order.id }}">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

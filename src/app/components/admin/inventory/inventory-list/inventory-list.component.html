@@ -1,0 +1,21 @@
+<!-- src/app/inventory-list/inventory-list.component.html -->
+<div class="inventory-list">
+    <h2>Inventory List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Stock Level</th>
+          <th>Warehouse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of inventory">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.stockLevel }}</td>
+          <td>{{ item.warehouse }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

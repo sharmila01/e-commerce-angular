@@ -1,0 +1,7 @@
+<div class="customer-details" *ngIf="customer">
+    <h2>{{ customer.name }}</h2>
+    <p>Email: {{ customer.email }}</p>
+    <p>Phone: {{ customer.phone }}</p>
+    <button (click)="updateCustomer()">Update</button>
+  </div>
+  

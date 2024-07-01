@@ -1,0 +1,14 @@
+<div class="category-update">
+    <h2>Update Category</h2>
+    <form (ngSubmit)="updateCategory()">
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="category.name" name="name" required>
+      <label for="description">Description:</label>
+      <input id="description" [(ngModel)]="category.description" name="description">
+      <label for="parent">Parent Category:</label>
+      <input id="parent" [(ngModel)]="category.parentCategory" name="parent">
+      <label for="image">Image:</label>
+      <input type="file" (change)="onFileChange($event)">
+      <button type="submit">Update</button>
+    </form>
+  </div>

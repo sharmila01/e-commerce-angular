@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { ProductCreateComponent } from './components/product-create/product-create.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductCreateComponent } from './components/admin/product/product-create/product-create.component';
+import { ProductDetailsComponent } from './components/admin/product/product-details/product-details.component';
+import { ProductListComponent } from './components/admin/product/product-list/product-list.component';
+import { ProductUpdateComponent } from './components/admin/product/product-update/product-update.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },

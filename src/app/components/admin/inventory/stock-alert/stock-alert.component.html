@@ -1,0 +1,10 @@
+<div class="stock-alert">
+    <h2>Stock Alerts</h2>
+    <input #productId type="number" placeholder="Product ID">
+    <input #threshold type="number" placeholder="Threshold">
+    <button (click)="addAlert(productId.value, threshold.value)">Set Alert</button>
+    <ul>
+      <li *ngFor="let alert of alerts">Product ID: {{ alert.productId }}, Threshold: {{ alert.threshold }}</li>
+    </ul>
+  </div>
+  

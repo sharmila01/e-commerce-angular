@@ -1,0 +1,16 @@
+<!-- src/app/category-list/category-list.component.html -->
+<div class="category-list">
+    <h2>Category List</h2>
+    <input [(ngModel)]="searchTerm" placeholder="Search Categories">
+    <button (click)="searchCategories()">Search</button>
+    <button routerLink="/categories/create">Create New Category</button>
+    <ul>
+      <li *ngFor="let category of categories">
+        {{ category.name }}
+        <button routerLink="/categories/details/{{ category.id }}">Details</button>
+        <button routerLink="/categories/update/{{ category.id }}">Edit</button>
+        <button (click)="deleteCategory(category.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

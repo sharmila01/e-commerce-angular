@@ -1,0 +1,10 @@
+<!-- src/app/warehouse-management/warehouse-management.component.html -->
+<div class="warehouse-management">
+    <h2>Warehouse Management</h2>
+    <input #warehouseName type="text" placeholder="Warehouse Name">
+    <button (click)="addWarehouse(warehouseName.value)">Add Warehouse</button>
+    <ul>
+      <li *ngFor="let warehouse of warehouses">{{ warehouse.name }}</li>
+    </ul>
+  </div>
+  

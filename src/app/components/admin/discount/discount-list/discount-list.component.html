@@ -1,0 +1,10 @@
+<div class="discount-list">
+    <div *ngFor="let discount of discounts">
+      <p>{{ discount.code }}</p>
+      <p>{{ discount.amount }}</p>
+      <p>{{ discount.usageLimit }}</p>
+      <p>{{ discount.expirationDate }}</p>
+      <button (click)="deleteDiscount(discount.id)">Delete</button>
+    </div>
+  </div>
+  
