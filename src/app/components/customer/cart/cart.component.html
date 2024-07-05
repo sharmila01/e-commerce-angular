@@ -5,8 +5,8 @@
         <h3>{{ item.product.name }}</h3>
         <p>{{ item.product.description }}</p>
         <p>${{ item.product.price }}</p>
-        <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item.product.id, item.quantity)">
-        <button (click)="removeItem(item.product.id)">Remove</button>
+        <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item.product.productId, item.quantity)">
+        <button (click)="removeItem(item.product.productId)">Remove</button>
       </div>
     </div>
     <div class="cart-summary">

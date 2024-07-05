@@ -1,0 +1,12 @@
+<div class="flash-sale">
+    <h2>Flash Sale</h2>
+    <div class="flash-sale-products">
+      <div *ngFor="let product of flashSaleProducts" class="product">
+        <img [src]="product.imageUrl" alt="{{ product.name }}">
+        <h4>{{ product.name }}</h4>
+        <p>Rs. {{ product.price }}</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  

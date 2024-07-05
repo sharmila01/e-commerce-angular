@@ -11,5 +11,12 @@
       <p><strong>Weight:</strong> {{ product.weight }}</p>
       <p><strong>Dimensions:</strong> {{ product.dimensions }}</p>
     </div>
+
+    <h2>Reviews</h2>
+    <app-product-reviews [productId]="product.productId"></app-product-reviews>
+
+    <h2>Add a Review</h2>
+    <app-add-review [productId]="product.productId"></app-add-review>
+    
   </div>
   

@@ -19,6 +19,9 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.apiUrl}/${productId}`);
   }
 
+  getFlashSaleProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
   
   searchProducts(query: string, category?: string, priceRange?: [number, number], brand?: string): Observable<Product[]> {
     let params: any = { query };
@@ -37,7 +40,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.apiUrl}/${product.id}`, product);
+    return this.http.put<Product>(`${this.apiUrl}/${product.productId}`, product);
   }
 
   deleteProduct(productId: number): Observable<void> {

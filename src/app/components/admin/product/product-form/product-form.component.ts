@@ -56,7 +56,7 @@ export class ProductFormComponent implements OnInit {
 
     const productData: Product = this.productForm.value;
     if (this.isEditMode && this.productId !== null) {
-      productData.id = this.productId;
+      productData.productId = this.productId;
       this.productService.updateProduct(productData).subscribe(() => {
         this.router.navigate(['/products']);
       });

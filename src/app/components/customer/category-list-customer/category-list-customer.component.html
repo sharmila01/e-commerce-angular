@@ -1,0 +1,14 @@
+<div *ngIf="categories.length > 0">
+    <div *ngFor="let category of categories" class="category">
+      <h3>{{ category.name }}</h3>
+      <ul>
+        <li *ngFor="let subcategory of category.subcategories">
+          <a [routerLink]="['/products', { categoryId: category.id, subcategoryId: subcategory.id }]">{{ subcategory.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="categories.length === 0">
+    <p>No categories found.</p>
+  </div>
+  

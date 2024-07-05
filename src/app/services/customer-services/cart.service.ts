@@ -16,7 +16,7 @@ export class CartService {
   }
 
   addToCart(product: Product, quantity: number = 1): void {
-    const itemIndex = this.cartItems.findIndex(item => item.product.id === product.id);
+    const itemIndex = this.cartItems.findIndex(item => item.product.productId === product.productId);
     if (itemIndex !== -1) {
       this.cartItems[itemIndex].quantity += quantity;
     } else {
@@ -26,7 +26,7 @@ export class CartService {
   }
 
   updateCartItem(productId: number, quantity: number): void {
-    const itemIndex = this.cartItems.findIndex(item => item.product.id === productId);
+    const itemIndex = this.cartItems.findIndex(item => item.product.productId === productId);
     if (itemIndex !== -1) {
       this.cartItems[itemIndex].quantity = quantity;
       if (quantity === 0) {
@@ -37,7 +37,7 @@ export class CartService {
   }
 
   removeCartItem(productId: number): void {
-    const itemIndex = this.cartItems.findIndex(item => item.product.id === productId);
+    const itemIndex = this.cartItems.findIndex(item => item.product.productId === productId);
     if (itemIndex !== -1) {
       this.cartItems.splice(itemIndex, 1);
       this.cartItemsSubject.next(this.cartItems);

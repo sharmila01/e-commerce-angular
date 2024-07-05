@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { FlashSaleComponent } from './components/customer/flash-sale/flash-sale.component';
+import { HeaderComponent } from './components/customer/header/header.component';
+import { ProductListComponent } from './components/customer/product-list/product-list.component';
+import { CategoryListCustomerComponent } from './components/customer/category-list-customer/category-list-customer.component';
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    CategoryListCustomerComponent,
+    FlashSaleComponent,
+    ProductListComponent,
+  ]
 })
-export class AppComponent {
-  title = 'e-commerce-angular';
-}
+export class AppComponent {}

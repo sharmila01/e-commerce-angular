@@ -1,0 +1,18 @@
+<form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="userName">Name:</label>
+      <input id="userName" formControlName="userName" />
+    </div>
+    <div>
+      <label for="rating">Rating:</label>
+      <select id="rating" formControlName="rating">
+        <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="comment">Comment:</label>
+      <textarea id="comment" formControlName="comment"></textarea>
+    </div>
+    <button type="submit">Submit Review</button>
+  </form>
+  

@@ -1,0 +1,19 @@
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  
+    .review-header {
+      font-weight: bold;
+    }
+  
+    .review-rating {
+      color: #f39c12;
+    }
+  
+    .review-comment {
+      margin-top: 5px;
+    }
+  }
+  

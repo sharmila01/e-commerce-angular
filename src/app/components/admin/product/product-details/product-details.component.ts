@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../../services/admin-services/product.service';
 import { CommonModule } from '@angular/common';
+import { AddReviewComponent } from '../../../customer/add-review/add-review.component';
+import { ProductReviewsComponent } from '../../../customer/product-reviews/product-reviews.component';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AddReviewComponent,ProductReviewsComponent],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit {
   id!: number;
   product: any;
 

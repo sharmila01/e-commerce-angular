@@ -1,0 +1,36 @@
+<div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search products">
+    <button (click)="searchProducts()">Search</button>
+  </div>
+  
+  <div class="filters">
+    <select [(ngModel)]="selectedCategory">
+      <option value="">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <!-- Add more categories as needed -->
+    </select>
+    
+    <select [(ngModel)]="selectedBrand">
+      <option value="">All Brands</option>
+      <option value="brandA">Brand A</option>
+      <option value="brandB">Brand B</option>
+      <!-- Add more brands as needed -->
+    </select>
+  
+    <input type="number" [(ngModel)]="priceRange[0]" placeholder="Min Price">
+    <input type="number" [(ngModel)]="priceRange[1]" placeholder="Max Price">
+  </div>
+  
+  <div class="product-list">
+    <div class="product" *ngFor="let product of products">
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>${{ product.price }}</p>
+
+      <button (click)="addToCart(product)">Add to Cart</button>
+      <button (click)="addToWishlist(product)">Add to Wishlist</button>
+    </div>
+  </div>
+  

@@ -24,9 +24,9 @@
           <td>{{ product.brand}}</td>
           <td>{{ product.stockQuantity   }}</td>
           <td>
-            <button routerLink="/products/details/{{ product.id }}">Details</button>
-            <button routerLink="/products/update/{{ product.id }}">Edit</button>
-            <button (click)="deleteProduct(product.id)">Delete</button>
+            <button routerLink="/products/details/{{ product.productId }}">Details</button>
+            <button routerLink="/products/update/{{ product.productId }}">Edit</button>
+            <button (click)="deleteProduct(product.productId)">Delete</button>
           </td>
         </tr>
       </tbody>

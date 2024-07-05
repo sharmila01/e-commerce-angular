@@ -1,0 +1,52 @@
+.flash-sale {
+    background: #f7f7f7;
+    padding: 20px 0;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .flash-sale-products {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  
+      .product {
+        width: calc(20% - 10px);
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+  
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+  
+        h4 {
+          margin: 10px 0;
+        }
+  
+        p {
+          color: #f57224;
+        }
+  
+        button {
+          background: #f57224;
+          color: #fff;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 3px;
+  
+          &:hover {
+            background: #f35e10;
+          }
+        }
+      }
+    }
+  }
+  
